@@ -5,17 +5,20 @@ import DefaultLayout from '@layouts/DefaultLayout';
 import { loadStoreAPI } from '@apis/store';
 import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
+import { useRouter } from 'next/router';
 
 interface Params extends ParsedUrlQuery {
   storeId: string;
 }
 
-const Home: React.FC<Params> = ({ storeId }) => {
+const Home: React.FC<Params> = () => {
+  const router = useRouter();
+  const { storeId } = router.query as Params;
   console.log(storeId);
-  const { data: storeInfo } = useQuery('storeInfo', () => loadStoreAPI(storeId));
+  const { data: storeInfo } = useQuery(['storeInfo', storeId], () => loadStoreAPI(storeId));
 
   return (
-    <DefaultLayout>
+    <DefaultLayout storeInfo={storeInfo}>
       <h1>home123</h1>
       {/*<InfiniteCarousel></InfiniteCarousel>*/}
     </DefaultLayout>
@@ -24,24 +27,31 @@ const Home: React.FC<Params> = ({ storeId }) => {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [], //indicates that no page needs be created at build time
-    // fallback: 'blocking', //indicates the type of fallback
-    fallback: true, //indicates the type of fallback
+    paths: ['/app/store/[storeId]'],
+    fallback: true,
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { storeId } = params as Params;
 
+  if (!storeId) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: true,
+      },
+    };
+  }
+
   console.log(storeId);
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery('storeInfo', () => loadStoreAPI(storeId));
+  await queryClient.prefetchQuery(['storeInfo', storeId], () => loadStoreAPI(storeId));
 
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
-      // dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
       storeId,
     },
   };

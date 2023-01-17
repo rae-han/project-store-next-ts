@@ -27,11 +27,9 @@ const Body = styled.section`
   }
 `;
 
-type MyComponentProps = {
-  children: JSX.Element;
-};
+interface Props {}
 
-const DefaultLayout = ({ children }: MyComponentProps) => {
+const DefaultLayout: Props = ({ children }) => {
   return (
     <DefaultLayoutContainer>
       <Header></Header>
