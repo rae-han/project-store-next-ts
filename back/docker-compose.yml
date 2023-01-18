@@ -1,0 +1,8 @@
+version: '3'
+services:
+  backend:
+    build: .
+    environment:
+      - PORT=6500
+    ports:
+      - 6500:6500

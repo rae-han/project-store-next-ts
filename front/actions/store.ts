@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { backUrl } from '../config/config';
 import storeSlice from '../reducers/modules/store';
-import { fetchStoreInfo, fetchSettings, fetchBanners, fetchCategories, fetchMenus } from '../apis/store';
+import { loadStoreAPI, loadSettingsAPI, loadBannersAPI, loadCategoriesAPI, loadMenusAPI } from '@apis/store';
 
 axios.defaults.baseURL = backUrl;
 axios.defaults.withCredentials = true; // front, backend 간 쿠키 공유
@@ -15,7 +15,7 @@ export const loadStoreInfo = createAsyncThunk('store/loadStoreInfo', async (data
   }
 
   try {
-    const response = await fetchStoreInfo(data);
+    const response = await loadStoreAPI(data);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
@@ -24,7 +24,7 @@ export const loadStoreInfo = createAsyncThunk('store/loadStoreInfo', async (data
 
 export const loadSettings = createAsyncThunk('store/loadSettings', async (data, thunkAPI) => {
   try {
-    const response = await fetchSettings(data);
+    const response = await loadSettingsAPI(data);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
@@ -33,7 +33,7 @@ export const loadSettings = createAsyncThunk('store/loadSettings', async (data, 
 
 export const loadBanners = createAsyncThunk('store/loadBanners', async (data, thunkAPI) => {
   try {
-    const response = await fetchBanners(data);
+    const response = await loadBannersAPI(data);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
@@ -42,7 +42,7 @@ export const loadBanners = createAsyncThunk('store/loadBanners', async (data, th
 
 export const loadCategories = createAsyncThunk('store/loadCategories', async (data, thunkAPI) => {
   try {
-    const response = await fetchCategories(data);
+    const response = await loadCategoriesAPI(data);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
@@ -51,7 +51,7 @@ export const loadCategories = createAsyncThunk('store/loadCategories', async (da
 
 export const loadMenus = createAsyncThunk('store/loadMenus', async (data, thunkAPI) => {
   try {
-    const response = await fetchMenus(data);
+    const response = await loadMenusAPI(data);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);

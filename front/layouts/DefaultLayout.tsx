@@ -27,9 +27,11 @@ const Body = styled.section`
   }
 `;
 
-interface Props {}
+interface Props {
+  children: React.ReactNode;
+}
 
-const DefaultLayout: Props = ({ children }) => {
+const DefaultLayout: React.FC<Props> = ({ children }) => {
   return (
     <DefaultLayoutContainer>
       <Header></Header>

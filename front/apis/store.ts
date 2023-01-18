@@ -7,8 +7,6 @@ axios.defaults.withCredentials = true;
 const [GET, POST] = ['GET', 'POST'];
 
 export function loadStoreAPI(data: string) {
-  console.log('data', data);
-
   const options = {
     method: GET,
     url: `/store/${data}`,
@@ -17,12 +15,34 @@ export function loadStoreAPI(data: string) {
   return axios(options).then((response) => response.data);
 }
 
-// export function fetchStoreInfo(data) {
-//   const options = {
-//     method: GET,
-//     url: `/store/${data}`,
-//   };
-//
-//   console.log(options);
-//   return axios(options).then((response) => response);
-// }
+export function loadSettingsAPI(data: string) {
+  const options = {
+    method: GET,
+    url: `/store/${data}/settings`,
+  };
+  return axios(options).then((response) => response.data);
+}
+
+export function loadBannersAPI(data: string) {
+  const options = {
+    method: GET,
+    url: `/store/${data}/banners`,
+  };
+  return axios(options).then((response) => response.data);
+}
+
+export function loadCategoriesAPI(data: string) {
+  const options = {
+    method: GET,
+    url: `/store/${data}/categories`,
+  };
+  return axios(options).then((response) => response.data);
+}
+
+export function loadMenusAPI({ storeId, categoryId }: { storeId: string; categoryId: string }) {
+  const options = {
+    method: GET,
+    url: `/store/${storeId}/category/${categoryId}/menus`,
+  };
+  return axios(options).then((response) => response.data);
+}

@@ -2,7 +2,11 @@ import { MouseEventHandler, TouchEventHandler } from 'react';
 
 const isTouchScreen = typeof window !== 'undefined' && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-export function addDragEvent({ onDragStart, onDrag, onDragEnd, stopPropagation = true }) {
+interface AddDragEvent {
+  ({ onDragStart, onDrag, onDragEnd, stopPropagation: boolean }): TouchEventHandler | MouseEventHandler;
+}
+
+export const addDragEvent: AddDragEvent = ({ onDragStart, onDrag, onDragEnd, stopPropagation = true }) => {
   if (isTouchScreen) {
     const onTouchStart: TouchEventHandler = (touchEvent) => {
       console.log(touchEvent.target);
@@ -37,7 +41,9 @@ export function addDragEvent({ onDragStart, onDrag, onDragEnd, stopPropagation =
       document.addEventListener('touchend', touchEndHandler, { once: true });
     };
 
-    return onTouchStart;
+    return {
+      onTouchStart,
+    };
   } else {
     const onMouseDown: MouseEventHandler = (downEvent) => {
       console.log('mousedown');
@@ -67,6 +73,8 @@ export function addDragEvent({ onDragStart, onDrag, onDragEnd, stopPropagation =
       document.addEventListener('mouseup', mouseUpHandler, { once: true });
     };
 
-    return {};
+    return {
+      onMouseDown,
+    };
   }
-}
+};
