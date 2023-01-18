@@ -1,4 +1,4 @@
-.infinite-carousel-container {
+.wiper-carousel-container {
   width: 100%;
   aspect-ratio: 18/17;
   overflow: hidden;
@@ -16,13 +16,8 @@
       width: 100%;
       height: 100%;
 
-      .image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .text {
+      .item-wrap {
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -32,9 +27,39 @@
         right: 0;
         bottom: 0;
         left: 0;
-        font-size: 192px;
-        font-weight: bold;
-        color: red;
+
+        .image {
+          z-index: 10;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .text {
+          z-index: 100;
+
+          .header {
+            font-size: 192px;
+            font-weight: bolder;
+            color: red;
+          }
+          .p {
+            font-size: 48px;
+            color: blue;
+          }
+
+          //animation: 1s linear 0s infinite alternate scale_up_text;
+        }
+
+        @keyframes scale_up_text {
+          from {
+            transform: sacle(50%);
+          }
+          to {
+            transform: scale(400%);
+          }
+        }
       }
     }
   }
