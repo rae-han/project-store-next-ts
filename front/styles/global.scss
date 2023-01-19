@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width: 768px;
+  --c-main: #ff8b45;
+  --c-white: white;
+  --c-666: #666;
+  --c-e1e1e1: #e1e1e1;
+  --c-f2f2f2: #f2f2f2;
+}
+
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+body, button {
+  font-family: 'NanumSquere', sans-serif;
+}

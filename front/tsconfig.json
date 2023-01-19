@@ -18,10 +18,11 @@
     "paths": {
       "@/*": ["./*"],
       "@apis/*": ["./apis/*"],
-      "@images/*": ["./public/images/*"],
-      "@pages/*": ["./pages/*"],
       "@components/*": ["./components/*"],
+      "@images/*": ["./public/images/*"],
       "@layouts/*": ["./layouts/*"],
+      "@pages/*": ["./pages/*"],
+      "@store/*": ["./store/*"],
       "@utils/*": ["./utils/*"]
     }
   },

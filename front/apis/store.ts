@@ -40,6 +40,7 @@ export function loadCategoriesAPI(data: string) {
 }
 
 export function loadMenusAPI({ storeId, categoryId }: { storeId: string; categoryId: string }) {
+  console.log(storeId, categoryId);
   const options = {
     method: GET,
     url: `/store/${storeId}/category/${categoryId}/menus`,

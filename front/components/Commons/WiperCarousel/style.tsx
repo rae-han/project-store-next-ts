@@ -1,0 +1,70 @@
+import styled from '@emotion/styled';
+
+export const CarouselContainer = styled.div`
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+
+  .slider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    aspect-ratio: 18/17;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    //transition: transform ease-in-out 125ms 0s;
+
+    .item {
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+
+      .item-wrap {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        .image {
+          z-index: 10;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .text {
+          z-index: 100;
+
+          .header {
+            font-size: 192px;
+            font-weight: bolder;
+            color: red;
+          }
+          .p {
+            font-size: 48px;
+            color: blue;
+          }
+
+          //animation: 1s linear 0s infinite alternate scale_up_text;
+        }
+
+        @keyframes scale_up_text {
+          from {
+            transform: sacle(50%);
+          }
+          to {
+            transform: scale(400%);
+          }
+        }
+      }
+    }
+  }
+`;
