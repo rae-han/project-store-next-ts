@@ -16,7 +16,7 @@ const WiperCarousel: React.FC<Props> = ({ data }) => {
   const slides = [...data, ...data, ...data];
   const [currentIndex, setCurrentIndex] = useState(data.length);
   const [transX, setTransX] = useState(0);
-  const [intervalId, setIntervalId] = useState<Node.Timer>(null);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timer>();
   const [animate, setAnimate] = useState(true);
   const viewer: React.RefObject<HTMLDivElement> = useRef(null);
   const time = useRef(4_000);
@@ -30,14 +30,19 @@ const WiperCarousel: React.FC<Props> = ({ data }) => {
   );
 
   // # 인덱스를 바꿔주는 함수
-  const changeCurrentIndex = useCallback(
-    (func) => {
-      setCurrentIndex((prev) => {
-        return func(prev);
-      });
-    },
-    [setCurrentIndex, currentIndex, animate],
-  );
+  // const changeCurrentIndex = useCallback(
+  //   (func) => {
+  //     setCurrentIndex((prev) => {
+  //       return func(prev);
+  //     });
+  //   },
+  //   [setCurrentIndex, currentIndex, animate],
+  // );
+  const changeCurrentIndex = (func: (index: number) => number) => {
+    setCurrentIndex((prev) => {
+      return func(prev);
+    });
+  };
 
   // # 드래그 했을때 인덱스를 바꿔주는 함수를 호출해주는 함수
   const onSlider = useCallback(

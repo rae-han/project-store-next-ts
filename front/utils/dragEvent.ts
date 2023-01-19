@@ -2,15 +2,32 @@ import { MouseEventHandler, TouchEventHandler } from 'react';
 
 const isTouchScreen = typeof window !== 'undefined' && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-interface AddDragEvent {
-  ({ onDragStart, onDrag, onDragEnd, stopPropagation: boolean }): TouchEventHandler | MouseEventHandler;
+interface AddDragEventParams {
+  onDragStart: () => void;
+  onDrag: (x: number) => void;
+  onDragEnd: (x: number) => void;
+  stopPropagation: boolean;
 }
+interface AddDragEvent {
+  (args: {
+    onDragStart: () => void;
+    onDrag: (deltaX: number) => void;
+    onDragEnd: (deltaX: number) => void;
+    stopPropagation?: boolean;
+  }):
+    | { onTouchStart: TouchEventHandler<Element>; onMouseDown?: undefined }
+    | { onMouseDown: MouseEventHandler<Element>; onTouchStart?: undefined };
+}
+// type AddDragEvent = (args: {
+//   onDragStart: () => void;
+//   onDrag: (x: number) => void;
+//   onDragEnd: (x: number) => void;
+//   stopPropagation: boolean;
+// }) => TouchEventHandler | MouseEventHandler;
 
 export const addDragEvent: AddDragEvent = ({ onDragStart, onDrag, onDragEnd, stopPropagation = true }) => {
   if (isTouchScreen) {
     const onTouchStart: TouchEventHandler = (touchEvent) => {
-      console.log(touchEvent.target);
-      console.log('touchEvent');
       if (stopPropagation) {
         touchEvent.stopPropagation(); // click 이벤트 전파 방지
       }
@@ -26,7 +43,7 @@ export const addDragEvent: AddDragEvent = ({ onDragStart, onDrag, onDragEnd, sto
         const deltaY = moveEvent.touches[0].pageY - touchEvent.touches[0].pageY;
 
         console.log('touchmove', deltaX, deltaY);
-        onDrag(deltaX, deltaY);
+        onDrag(deltaX);
       };
       document.addEventListener('touchmove', touchMoveHandler, { passive: false });
 
@@ -34,8 +51,7 @@ export const addDragEvent: AddDragEvent = ({ onDragStart, onDrag, onDragEnd, sto
         const deltaX = endEvent.changedTouches[0].pageX - touchEvent.changedTouches[0].pageX;
         const deltaY = endEvent.changedTouches[0].pageY - touchEvent.changedTouches[0].pageY;
 
-        console.log('touchend', deltaX, deltaY);
-        onDragEnd(deltaX, deltaY);
+        onDragEnd(deltaX);
         document.removeEventListener('touchmove', touchMoveHandler);
       };
       document.addEventListener('touchend', touchEndHandler, { once: true });
@@ -58,7 +74,7 @@ export const addDragEvent: AddDragEvent = ({ onDragStart, onDrag, onDragEnd, sto
         const deltaY = moveEvent.pageY - downEvent.pageY;
 
         console.log('mousemove', deltaX, deltaY);
-        onDrag(deltaX, deltaY);
+        onDrag(deltaX);
       };
       document.addEventListener('mousemove', mouseMoveHandler);
 

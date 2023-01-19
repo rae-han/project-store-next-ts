@@ -50,6 +50,7 @@ const Home: React.FC = () => {
       {isLoading ? null : <WiperCarousel data={storeInfo.ad_list}></WiperCarousel>}
       <div>category</div>
       <div>menus</div>
+      <div style={{ paddingTop: '1200px' }}>menus</div>
     </DefaultLayout>
   );
 };

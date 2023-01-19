@@ -5,9 +5,13 @@ import hamburger from '@images/icons/side-menu-hamburger.svg';
 import cart from '@images/icons/cart_nor.svg';
 
 const HeaderContainer = styled.header`
+  z-index: 100;
   position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
   height: 44px;
-  background-color: var(--color-white);
+  background-color: var(--c-white);
 
   & > .wrap {
     display: flex;
