@@ -26,6 +26,8 @@ export const CategoryListWrap = styled.div`
   &::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
   }
+  -webkit-overflow-scrolling: touch; /* 끝에서 바운스 되도록*/
+  scroll-snap-type: x mandatory;
 `;
 
 export const CategoryItemButton = styled.button`
@@ -36,4 +38,6 @@ export const CategoryItemButton = styled.button`
   font-weight: bold;
   color: ${({ active }: { active: boolean }) => (active ? 'var(--c-main)' : 'var(--c-666)')};
   line-height: 1.6;
+
+  scroll-snap-align: end;
 `;

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 import hamburger from '@images/icons/side-menu-hamburger.svg';
 import cart from '@images/icons/cart_nor.svg';
+import SideMenu from '@components/Commons/SideMenu';
 
 const HeaderContainer = styled.header`
   z-index: 100;
@@ -70,6 +71,10 @@ function Header() {
   const [isCenterTitle, setIsCenterTitle] = useState(false);
   const menuBack = useRef();
 
+  const onToggleSidemenu = useCallback(() => {
+    setIsSideMenu((prev) => !prev);
+  }, []);
+
   const onClickBackground = useCallback((e: any) => {
     if (e.target === menuBack.current) {
       setIsSideMenu(false);
@@ -80,7 +85,8 @@ function Header() {
     <HeaderContainer>
       <div className="wrap">
         <div className="menu-area">
-          <Image src={hamburger} alt="side menu" width={47} height={44} />
+          <Image src={hamburger} alt="side menu" width={47} height={44} onClick={onToggleSidemenu} />
+          <SideMenu show={isSideMenu} onToggle={setIsSideMenu} />
           <h1 className={`title ${isCenterTitle ? 'center' : 'left'}`}>타이틀</h1>
         </div>
         <div className="menu-area">

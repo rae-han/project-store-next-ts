@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a12cbe4-4236-4648-b5db-e15e97157b25" name="변경" comment="" />
+    <list default="true" id="1a12cbe4-4236-4648-b5db-e15e97157b25" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/front/hooks/intersectionObserver.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Category/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Category/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Commons/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Commons/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Menu/MenuItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/MenuItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Menu/MenuList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/MenuList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Menu/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/app/store/[storeId]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/app/store/[storeId]/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles/global.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/front" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,7 +76,8 @@
       <workItem from="1673864451063" duration="102000" />
       <workItem from="1673864557255" duration="619000" />
       <workItem from="1673865182140" duration="312000" />
-      <workItem from="1673866278156" duration="69460000" />
+      <workItem from="1673866278156" duration="112069000" />
+      <workItem from="1675169776120" duration="14232000" />
     </task>
     <servers />
   </component>

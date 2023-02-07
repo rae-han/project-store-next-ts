@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { dehydrate, QueryClient, useInfiniteQuery, useQueries, useQuery } from '@tanstack/react-query';
+import type { NextPage } from 'next';
+import {
+  dehydrate,
+  QueryClient,
+  QueryFunctionContext,
+  useInfiniteQuery,
+  useQueries,
+  useQuery,
+} from '@tanstack/react-query';
 import DefaultLayout from '@layouts/DefaultLayout';
 import WiperCarousel from '@components/Commons/WiperCarousel';
 import { loadStoreAPI, loadSettingsAPI, loadBannersAPI, loadCategoriesAPI, loadMenusAPI } from '@apis/store';
@@ -10,6 +18,7 @@ import CategoryList from '@components/Category/CategoryList';
 import MenuList from '@components/Menu/MenuList';
 import { useAppDispatch, useAppSelector } from '@/hooks/store';
 import { increment, decrement } from '@store/counter/counterSlice';
+import axios from 'axios';
 
 interface Params extends ParsedUrlQuery {
   storeId: string;
@@ -19,7 +28,14 @@ interface Category {
   category_name: string;
 }
 
-const Home: React.FC = () => {
+const fetcher = async ({ queryKey }: QueryFunctionContext) => {
+  console.log('QK', queryKey);
+  console.log('QK', queryKey[1]);
+  const { data } = await axios.get(`/store/${'2EE81511'}`);
+  return data;
+};
+
+const Home: NextPage = () => {
   const router = useRouter();
   const { storeId } = router.query as Params;
   const { data: storeInfo, isLoading: isLoadingStore } = useQuery(['storeInfo', storeId], () => loadStoreAPI(storeId), {
@@ -45,6 +61,7 @@ const Home: React.FC = () => {
       enabled: !!storeId && !!categories[0]?.category_id,
     },
   );
+  const { data } = useQuery(['store', storeId], fetcher);
   const { value: count } = useAppSelector((state) => state.counter);
   const dispatch = useAppDispatch();
 
@@ -55,15 +72,15 @@ const Home: React.FC = () => {
           background-color: var(--c-f2f2f2);
         }
       `}</style>
-      {isLoadingStore ? null : <WiperCarousel data={storeInfo.ad_list}></WiperCarousel>}
-      {isLoadingCategory ? null : <CategoryList list={categories} />}
-      {isLoadingMenus ? null : <MenuList list={menus} />}
       <div>
         <button onClick={() => dispatch(increment())}>increment</button>
         <span>{count}</span>
         <button onClick={() => dispatch(decrement())}>decrement</button>
       </div>
-      <div style={{ paddingTop: '1600px' }}>menus</div>
+      {isLoadingStore ? null : <WiperCarousel data={storeInfo.ad_list}></WiperCarousel>}
+      {isLoadingCategory ? null : <CategoryList list={categories} />}
+      {isLoadingMenus ? null : <MenuList list={menus} />}
+      {/*<div style={{ paddingTop: '1600px' }}>menus</div>*/}
     </DefaultLayout>
   );
 };
