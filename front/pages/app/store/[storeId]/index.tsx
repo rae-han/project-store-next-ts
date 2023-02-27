@@ -19,6 +19,7 @@ import MenuList from '@components/Menu/MenuList';
 import { useAppDispatch, useAppSelector } from '@/hooks/store';
 import { increment, decrement } from '@store/counter/counterSlice';
 import axios from 'axios';
+import DefaultFooterLayout from '@layouts/DefaultFooterLayout';
 
 interface Params extends ParsedUrlQuery {
   storeId: string;
@@ -61,12 +62,12 @@ const Home: NextPage = () => {
       enabled: !!storeId && !!categories[0]?.category_id,
     },
   );
-  const { data } = useQuery(['store', storeId], fetcher);
+
   const { value: count } = useAppSelector((state) => state.counter);
   const dispatch = useAppDispatch();
 
   return (
-    <DefaultLayout>
+    <DefaultFooterLayout>
       <style global jsx>{`
         body {
           background-color: var(--c-f2f2f2);
@@ -81,7 +82,7 @@ const Home: NextPage = () => {
       {isLoadingCategory ? null : <CategoryList list={categories} />}
       {isLoadingMenus ? null : <MenuList list={menus} />}
       {/*<div style={{ paddingTop: '1600px' }}>menus</div>*/}
-    </DefaultLayout>
+    </DefaultFooterLayout>
   );
 };
 

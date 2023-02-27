@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a12cbe4-4236-4648-b5db-e15e97157b25" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/front/hooks/intersectionObserver.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/layouts/DefaultFooterLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/store/state/stateSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/Category/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Category/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/Commons/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Commons/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Commons/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Commons/Footer/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/components/Menu/MenuItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/MenuItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/Menu/MenuList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/MenuList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/components/Menu/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/layouts/DefaultLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/layouts/DefaultLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/_document.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/pages/app/store/[storeId]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/app/store/[storeId]/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/store/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles/global.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,24 +34,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "/Users/raehan/Documents/project/menu/menu-next-ts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/raehan/Documents/project/menu/menu-next-ts/front/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/raehan/Documents/project/menu/menu-next-ts/front/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/raehan/Documents/project/menu/menu-next-ts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/raehan/Documents/project/menu/menu-next-ts/front/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/raehan/Documents/project/menu/menu-next-ts/front/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -77,7 +81,10 @@
       <workItem from="1673864557255" duration="619000" />
       <workItem from="1673865182140" duration="312000" />
       <workItem from="1673866278156" duration="112069000" />
-      <workItem from="1675169776120" duration="14232000" />
+      <workItem from="1675169776120" duration="23790000" />
+      <workItem from="1675908617285" duration="1994000" />
+      <workItem from="1676954430169" duration="26477000" />
+      <workItem from="1677482059664" duration="4363000" />
     </task>
     <servers />
   </component>

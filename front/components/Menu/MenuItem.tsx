@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { MenuItemContainer } from './styles';
 import Menu from '@/interfaces/menu';
 
@@ -51,7 +51,8 @@ const MenuItem: React.FC<Props> = ({ menu }) => {
             <img
               className="menu-image"
               ref={imageRef}
-              src={src}
+              // src={src}
+              srcSet={src}
               data-src={menu.menu_img}
               alt="menu image"
               loading="lazy"

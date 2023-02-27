@@ -9,6 +9,7 @@ export const MenuListContainer = styled.div`
     max-width: var(--max-width);
 
     .menu-list {
+      overflow: auto;
       display: flex;
       flex-wrap: wrap;
       padding: 7px;
