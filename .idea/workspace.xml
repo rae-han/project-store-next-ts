@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a12cbe4-4236-4648-b5db-e15e97157b25" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/front/layouts/DefaultFooterLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/store/state/stateSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/test/lazy.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/test/suspense.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/Commons/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Commons/Footer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/Menu/MenuItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/MenuItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/Menu/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Menu/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/layouts/DefaultLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/layouts/DefaultLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/_document.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/app/store/[storeId]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/app/store/[storeId]/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles/global.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +74,8 @@
       <workItem from="1675169776120" duration="23790000" />
       <workItem from="1675908617285" duration="1994000" />
       <workItem from="1676954430169" duration="26477000" />
-      <workItem from="1677482059664" duration="4363000" />
+      <workItem from="1677482059664" duration="28944000" />
+      <workItem from="1677843287122" duration="490000" />
     </task>
     <servers />
   </component>
